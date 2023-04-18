@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const WeatherDetails = () => {
-  return (
-    <div>WeatherDetails</div>
-  )
-}
+const WeatherDetails = () => (
+  <div>WeatherDetails</div>
+);
 
-export default WeatherDetails
+export default WeatherDetails;
