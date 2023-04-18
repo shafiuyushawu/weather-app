@@ -33,14 +33,34 @@ const weatherSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchWeatherCondtions.fulfilled, (state, action) => {
-        const locations = action.payload.location;
-        const currentConditions = action.payload.current;
+        const { location } = action.payload;
+        const { current } = action.payload;
         const { forecast } = action.payload;
 
         state.isLoading = false;
-        state.location = locations;
-        state.conditions = currentConditions;
-        state.forecast = forecast;
+        state.location = {
+          name: location.name,
+          region: location.region,
+        };
+        state.conditions = {
+          last_updated: current.last_updated,
+          temp_c: current.temp_c,
+          cloud: current.cloud,
+          humidity: current.humidity,
+          text: current.condition.text,
+          icon: current.condition.icon,
+        };
+        state.forecast = forecast.forecastday.map((fcast) => ({
+          date: fcast.date,
+          maxtemp_c: fcast.day.maxtemp_c,
+          mintemp_c: fcast.day.mintemp_c,
+          avgtemp_c: fcast.day.avgtemp_c,
+          avghumidity: fcast.day.avghumidity,
+          daily_chance_of_rain: fcast.day.daily_chance_of_rain,
+          daily_chance_of_snow: fcast.day.daily_chance_of_snow,
+          text: fcast.day.condition.text,
+          icon: fcast.day.condition.icon,
+        }));
       })
       .addCase(fetchWeatherCondtions.rejected, (state, action) => {
         state.isLoading = false;
