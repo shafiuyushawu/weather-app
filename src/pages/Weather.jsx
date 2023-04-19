@@ -24,7 +24,7 @@ const Weather = () => {
     } else {
       dispatch(fetchWeatherCondtions('Nairobi'));
     }
-  }, [dispatch]);
+  }, [dispatch, search]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
