@@ -43,9 +43,7 @@ const weatherSlice = createSlice({
   reducers: {
     ForecastDetails: (state, action) => {
       const date = action.payload;
-      console.log(date);
       const forecastDetails = state.forecastDetails[date];
-      console.log(forecastDetails);
       return forecastDetails || null;
     },
   },
@@ -78,12 +76,6 @@ const weatherSlice = createSlice({
         state.forecast = forecast.forecastday.map((fcast) => ({
           id: uuidv4(),
           date: fcast.date,
-          maxtemp_c: fcast.day.maxtemp_c,
-          mintemp_c: fcast.day.mintemp_c,
-          avgtemp_c: fcast.day.avgtemp_c,
-          avghumidity: fcast.day.avghumidity,
-          daily_chance_of_rain: fcast.day.daily_chance_of_rain,
-          daily_chance_of_snow: fcast.day.daily_chance_of_snow,
           text: fcast.day.condition.text,
           icon: fcast.day.condition.icon,
         }));
@@ -91,12 +83,12 @@ const weatherSlice = createSlice({
         state.forecastDetails = forecast.forecastday.reduce((acc, fcast) => ({
           ...acc,
           [fcast.date]: {
-            maxtemp_c: fcast.day.maxtemp_c,
-            mintemp_c: fcast.day.mintemp_c,
-            avgtemp_c: fcast.day.avgtemp_c,
+            maxtemp: fcast.day.maxtemp_c,
+            mintemp: fcast.day.mintemp_c,
+            avgtemp: fcast.day.avgtemp_c,
             avghumidity: fcast.day.avghumidity,
-            daily_chance_of_rain: fcast.day.daily_chance_of_rain,
-            daily_chance_of_snow: fcast.day.daily_chance_of_snow,
+            rain: fcast.day.daily_chance_of_rain,
+            snow: fcast.day.daily_chance_of_snow,
             text: fcast.day.condition.text,
             icon: fcast.day.condition.icon,
           },

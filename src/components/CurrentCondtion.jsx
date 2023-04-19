@@ -14,40 +14,54 @@ const CurrentCondtion = () => {
         <h2 className="text-center ">
           Last Updated:
           {'   '}
-          <span className="text-white">{conditions.last_updated}</span>
+          <span className="text-white">
+            {conditions && conditions.last_updated && (
+              <p>{conditions.last_updated}</p>
+            )}
+          </span>
         </h2>
         <div className="flex justify-between gap-5">
           <ul className="">
             <li className="flex">
               Temperature:
-              {'   '}
-              <span>{conditions.temp_c}</span>
+              {' '}
+              <span>
+                {conditions && conditions.temp_c && <p>{conditions.temp_c}</p>}
+              </span>
               <WiDegrees className="text-2xl text-white" />
             </li>
 
             <li className="flex">
               Humidity:
               {' '}
-              {conditions.humidity}
+              {conditions && conditions.humidity && (
+                <p>{conditions.humidity}</p>
+              )}
               <WiHumidity />
             </li>
             <li className="flex">
               Cloud:
               {' '}
-              {conditions.cloud}
+              {conditions && conditions.cloud && <p>{conditions.cloud}</p>}
               <AiFillCloud />
             </li>
             <li className="flex">
               Wind:
               {' '}
-              {conditions.wind_mph}
+              {conditions && conditions.wind_mph && (
+                <p>{conditions.wind_mph}</p>
+              )}
               mph
               <GiWindTurbine />
             </li>
           </ul>
           <div>
-            <img src={conditions.icon} alt="icon" />
-            <span>{conditions.text}</span>
+            {conditions && conditions.icon && (
+              <img src={conditions.icon} alt="icon" />
+            )}
+            <span>
+              {conditions && conditions.text && <p>{conditions.text}</p>}
+            </span>
           </div>
         </div>
       </div>

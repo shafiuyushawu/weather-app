@@ -1,22 +1,78 @@
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { TbTemperatureCelsius, TbCloudSnow } from 'react-icons/tb';
+import { WiHumidity } from 'react-icons/wi';
+import { BsFillCloudLightningRainFill } from 'react-icons/bs';
 
-// const { forecastDetails } = useSelector((state) => state.weather);
-const WeatherDetails = () => (
-  <section>
-    (
-    <div className="bg-gradient-to-tl from-green-900 to-blue-700 h-52 w-full  relative">
-      <img
-        src="sads"
-        alt="back"
-        className="w-full h-full object-cover absolute mix-blend-overlay"
-      />
-      <div className="">
-        <h2 className="text-white font-bold text-4xl text-right ">
-          selected
-        </h2>
+const WeatherDetails = () => {
+  const {
+    icon, text, maxtemp, mintemp, avgtemp, avghumidity, rain, snow,
+  } = useSelector((state) => state.weather);
+
+  return (
+    <section>
+      <div className="px-3 bg-gradient-to-tl from-green-900 to-blue-700 h-52 w-full  relative">
+        <img src={icon} alt="icon" className="w-32 " />
+        <div className="">
+          <h2 className="text-white font-bold text-4xl text-right ">{text}</h2>
+        </div>
       </div>
-    </div>
-    )
-  </section>
-);
+      <ul className="py-3">
+        <li className="flex justify-between px-2 items-center border-t-2 text-xl p-1">
+          <span>Maximum Temperature:</span>
+          <span className="text-white font-bold flex">
+            {maxtemp}
+            {' '}
+            <TbTemperatureCelsius className="text-xl ml-1" />
+            {' '}
+          </span>
+        </li>
+        <li className="flex justify-between px-2 items-center  border-t-2 text-xl p-1">
+          <span>Minumum Temperature:</span>
+          <span className="text-white font-bold flex">
+            {mintemp}
+            {' '}
+            <TbTemperatureCelsius className="text-xl" />
+            {' '}
+          </span>
+        </li>
+        <li className="flex justify-between px-2 items-center  border-t-2 text-xl p-1">
+          <span>Average Temperature:</span>
+          <span className="text-white font-bold flex">
+            {avgtemp}
+            {' '}
+            <TbTemperatureCelsius className="text-xl" />
+            {' '}
+          </span>
+        </li>
+        <li className="flex justify-between px-2 items-center  border-t-2 text-xl p-1">
+          <span>Average Humidity:</span>
+          <span className="text-white font-bold flex">
+            {avghumidity}
+            {' '}
+            <WiHumidity className="text-xl" />
+            {' '}
+          </span>
+        </li>
+        <li className="flex justify-between px-2 items-center  border-t-2 text-xl p-1">
+          <span>Daily Chance of Rain:</span>
+          <span className="text-white font-bold flex">
+            {rain}
+            {' '}
+            <BsFillCloudLightningRainFill className="text-xl" />
+            {' '}
+          </span>
+        </li>
+        <li className="flex justify-between px-2 items-center border-b-2  border-t-2 text-xl p-1">
+          <span>Daily Chance of Snow:</span>
+          <span className="text-white font-bold flex">
+            {snow}
+            {' '}
+            <TbCloudSnow className="text-xl" />
+            {' '}
+          </span>
+        </li>
+      </ul>
+    </section>
+  );
+};
 export default WeatherDetails;

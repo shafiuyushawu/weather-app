@@ -7,17 +7,16 @@ import { ForecastDetails } from '../redux/weather/weatherSlice';
 const DailyForecast = ({ fcast }) => {
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    dispatch(ForecastDetails(fcast.date));
+  const handleClick = (date) => {
+    dispatch(ForecastDetails(date));
   };
 
   return (
     <li className="grid-cols-2 border-2 border-blue-300 p-2 hover:border-blue-500 hover:shadow-sm hover:shadow-blue-500 shadow-sm shadow-green-200">
-      <Link to="/weather-details" onClick={handleClick}>
+      <Link to="/weather-details" onClick={() => handleClick(fcast.date)}>
         <div className="flex justify-between">
           <span>
             Date:
-            {' '}
             {fcast.date}
           </span>
           <FaRegArrowAltCircleRight className="text-2xl text-blue-300 hover:text-blue-500" />

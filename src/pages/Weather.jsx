@@ -9,16 +9,29 @@ import DailyForecast from '../components/DailyForecast';
 
 const Weather = () => {
   const [submit, setSubmit] = useState('');
+  const [search, setSearch] = useState('');
 
   const dispatch = useDispatch();
 
   const {
     location, forecast, isLoading, error,
-  } = useSelector((state) => state.weather);
-
+  } = useSelector(
+    (state) => state.weather,
+  );
   useEffect(() => {
-    dispatch(fetchWeatherCondtions('nairobi'));
+    if (search) {
+      dispatch(fetchWeatherCondtions(search));
+    } else {
+      dispatch(fetchWeatherCondtions('Nairobi'));
+    }
   }, [dispatch]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (submit !== 0) {
+      setSearch(submit);
+    }
+  };
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -39,29 +52,37 @@ const Weather = () => {
           />
         </div>
         <div className=" justify-between px-3 items-center">
-          <form className="flex pt-2 flex-row">
-            <input type="text" placeholder="Type here" value={submit} onChange={(e) => setSubmit(e.target.value)} className="input bg-white  input-sm w-full max-w-xs rounded-r-none" />
-            <button type="submit" id="submit" className="btn  rounded-l-none btn-sm bg-gradient-to-tr from-blue-800 to-green-600">
+          <ul className="px-2 align-bottom flex gap-4 justify-center text-[16px]">
+            <li className="text-white font-bold text-right ">
+              {location && location.region && <p>{location.region}</p>}
+            </li>
+            |
+            <li className="text-white font-bold  text-right text-[]16px]">
+              {location && location.country && <p>{location.country}</p>}
+            </li>
+            |
+            <li className="text-white align-bottom font-bold  text-[16px]">
+              {location && location.continent && <p>{location.continent}</p>}
+            </li>
+          </ul>
+          <form onSubmit={handleSubmit} className="flex pt-2 flex-row">
+            <input
+              type="text"
+              placeholder="Search by coutry | city"
+              value={submit}
+              onChange={(e) => setSubmit(e.target.value)}
+              className="input bg-white  input-sm w-full max-w-xs rounded-r-none"
+            />
+            <button
+              type="submit"
+              id="submit"
+              className="btn  rounded-l-none btn-sm bg-gradient-to-tr from-blue-800 to-green-600"
+            >
               <GoSearch className="text-white font-extrabold text-2xl " />
               .
             </button>
           </form>
-          <ul className="px-2 align-bottom flex gap-4 justify-center">
-
-            <li className="text-white font-bold text-xl text-right ">
-              {location.region}
-            </li>
-            |
-            <li className="text-white font-bold text-xl text-right ">
-              {location.country}
-            </li>
-            |
-            <li className="text-white align-bottom font-bold text-xl text-right ">
-              {location.continent}
-            </li>
-          </ul>
         </div>
-
       </section>
       <section className=" p-3">
         <CurrentCondtion />
@@ -72,9 +93,10 @@ const Weather = () => {
           <HiOutlineLocationMarker className="inline text-white font-bold ml-2" />
         </h1>
         <ul className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-2 p-2">
-          {forecast && forecast.map((fcast) => (
-            <DailyForecast key={fcast.id} fcast={fcast} />
-          ))}
+          {forecast
+            && forecast.map((fcast) => (
+              <DailyForecast key={fcast.id} fcast={fcast} />
+            ))}
         </ul>
       </section>
     </div>
