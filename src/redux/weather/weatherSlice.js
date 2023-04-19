@@ -49,6 +49,7 @@ const weatherSlice = createSlice({
           humidity: current.humidity,
           text: current.condition.text,
           icon: current.condition.icon,
+          wind_mph: current.wind_mph,
         };
         state.forecast = forecast.forecastday.map((fcast) => ({
           date: fcast.date,

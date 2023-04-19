@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaRegArrowAltCircleRight } from 'react-icons/fa';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import CurrentCondtion from '../components/CurrentCondtion';
@@ -10,9 +10,19 @@ import backImg from '../assets/AverageTmpMapRussiaDec.png';
 const Weather = () => {
   const dispatch = useDispatch();
 
+  const { location, isLoading, error } = useSelector((state) => state.weather);
+
   useEffect(() => {
-    dispatch(fetchWeatherCondtions());
-  }, [dispatch]);
+    if (location.length === 0) dispatch(fetchWeatherCondtions());
+  }, [dispatch, location.length]);
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>{error}</h1>;
+  }
 
   return (
     <div className="h-screen">
@@ -25,7 +35,7 @@ const Weather = () => {
           />
           <div className="">
             <h2 className="text-white font-bold text-4xl text-right ">
-              London
+              Current Updates
             </h2>
           </div>
         </div>
