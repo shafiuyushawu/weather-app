@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => (
@@ -7,11 +6,6 @@ const Navbar = () => (
       <Link to="/" className="btn btn-ghost normal-case text-xl">
         Weather
       </Link>
-    </div>
-    <div className="flex-none">
-      <div className="form-control">
-        <input type="text" placeholder="Search" className="input input-sm" />
-      </div>
     </div>
   </nav>
 );
