@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import client from '../api/client';
 import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {

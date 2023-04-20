@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { AiFillCloud } from 'react-icons/ai';
 import { GoSearch } from 'react-icons/go';
 import Loading from '../components/Loading';
 import CurrentCondtion from '../components/CurrentCondtion';
@@ -96,7 +96,7 @@ const Weather = () => {
       <section>
         <h1 className="text-xl bg-gradient-to-tr from-blue-800 to-green-600 text-white flex justify-center items-center mb-5">
           Daily Forecasts
-          <HiOutlineLocationMarker className="inline text-white font-bold ml-2" />
+          <AiFillCloud className="inline text-white font-bold ml-2" />
         </h1>
         <ul className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-2 p-2">
           {forecast

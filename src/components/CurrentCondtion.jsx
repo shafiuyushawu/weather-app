@@ -1,14 +1,16 @@
 import { useSelector } from 'react-redux';
 import { WiDegrees, WiHumidity } from 'react-icons/wi';
 import { GiWindTurbine } from 'react-icons/gi';
-import { AiFillCloud } from 'react-icons/ai';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { BiCurrentLocation } from 'react-icons/bi';
 
 const CurrentCondtion = () => {
   const { conditions } = useSelector((state) => state.weather);
   return (
     <div className="">
-      <h1 className="text-xl bg-gradient-to-tr from-blue-800 to-green-600 text-white flex justify-center items-center mb-5">
-        Current weather
+      <h1 className="text-xl bg-gradient-to-tr from-blue-800 to-green-600 text-white flex justify-center items-center gap-3 mb-5">
+        Current conditions
+        <BiCurrentLocation />
       </h1>
       <div className="flex flex-col">
         <h2 className="text-center ">
@@ -43,7 +45,7 @@ const CurrentCondtion = () => {
               Cloud:
               {' '}
               {conditions && conditions.cloud && <p>{conditions.cloud}</p>}
-              <AiFillCloud />
+              <HiOutlineLocationMarker />
             </li>
             <li className="flex">
               Wind:
