@@ -12,7 +12,7 @@ const DailyForecast = ({ fcast }) => {
   };
 
   return (
-    <li className="grid-cols-2 border-2 border-blue-300 p-2 hover:border-blue-500 hover:shadow-sm hover:shadow-blue-500 shadow-sm shadow-green-200">
+    <li className="grid-cols-2 border-2 even:bg-[#34495e] border-blue-300 p-2 hover:border-blue-500 hover:shadow-sm hover:shadow-blue-500 shadow-sm shadow-green-200">
       <Link to="/weather-details" onClick={() => handleClick(fcast.date)}>
         <div className="flex justify-between">
           <span>

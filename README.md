@@ -57,7 +57,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Render list of weather conditions with its predictions for the next 10 days
+> Render list of weather conditions with its predictions for the next 10 days.
+
 > Provides the feature to search for your locations with cities, countries names etc,.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -68,7 +69,7 @@
 
 ## Presentation
 
-[Link to my presentation]()
+[Link to my presentation](https://www.loom.com/share/c55f339be63c48ee9f3d4b83a35c6cfd)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

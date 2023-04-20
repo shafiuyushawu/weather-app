@@ -28,7 +28,7 @@ const WeatherDetails = () => {
             {' '}
           </span>
         </li>
-        <li className="flex justify-between px-2 items-center  border-t-2 text-xl p-1">
+        <li className="flex justify-between px-2 items-center bg-[#34495e] border-t-2 text-xl p-1">
           <span>Minumum Temperature:</span>
           <span className="text-white font-bold flex">
             {mintemp}
@@ -46,7 +46,7 @@ const WeatherDetails = () => {
             {' '}
           </span>
         </li>
-        <li className="flex justify-between px-2 items-center  border-t-2 text-xl p-1">
+        <li className="flex justify-between px-2 items-center bg-[#34495e]  border-t-2 text-xl p-1">
           <span>Average Humidity:</span>
           <span className="text-white font-bold flex">
             {avghumidity}
@@ -64,7 +64,7 @@ const WeatherDetails = () => {
             {' '}
           </span>
         </li>
-        <li className="flex justify-between px-2 items-center border-b-2  border-t-2 text-xl p-1">
+        <li className="flex justify-between px-2 items-center bg-[#34495e] border-b-2  border-t-2 text-xl p-1">
           <span>Daily Chance of Snow:</span>
           <span className="text-white font-bold flex">
             {snow}
@@ -75,7 +75,10 @@ const WeatherDetails = () => {
         </li>
       </ul>
 
-      <Link to="/" className="btn btn-ghost normal-case flex justify-center text-xl text-xl p-2">
+      <Link
+        to="/"
+        className="btn btn-ghost normal-case flex justify-center text-xl text-xl p-2"
+      >
         <FcHome className="inline text-2xl mr-4" />
         Go Home
       </Link>
