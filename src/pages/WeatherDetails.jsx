@@ -2,6 +2,8 @@ import { useSelector } from 'react-redux';
 import { TbTemperatureCelsius, TbCloudSnow } from 'react-icons/tb';
 import { WiHumidity } from 'react-icons/wi';
 import { BsFillCloudLightningRainFill } from 'react-icons/bs';
+import { FcHome } from 'react-icons/fc';
+import { Link } from 'react-router-dom';
 
 const WeatherDetails = () => {
   const {
@@ -72,6 +74,11 @@ const WeatherDetails = () => {
           </span>
         </li>
       </ul>
+
+      <Link to="/" className="btn btn-ghost normal-case flex justify-center text-xl text-xl p-2">
+        <FcHome className="inline text-2xl mr-4" />
+        Go Home
+      </Link>
     </section>
   );
 };
