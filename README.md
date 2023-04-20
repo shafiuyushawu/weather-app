@@ -136,7 +136,7 @@ To run the project, execute the following command:
 
 ### Deployment
 
-(Render)[https://weather-app-r266.onrender.com/]
+[Render](https://weather-app-r266.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
