@@ -64,7 +64,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Link]()
+[Link](https://weather-app-r266.onrender.com/)
 
 ## Presentation
 
@@ -136,7 +136,7 @@ To run the project, execute the following command:
 
 ### Deployment
 
-The project will be deployed soon.
+(Render)[https://weather-app-r266.onrender.com/]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
