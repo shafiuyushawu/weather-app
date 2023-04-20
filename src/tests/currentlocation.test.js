@@ -42,10 +42,10 @@ describe('Check if current location components render correctly', () => {
     const { container } = render(
       <Provider store={store}>
         <CurrentCondition />
-      </Provider>
+      </Provider>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();;
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renders CurrentCondition component', () => {
@@ -64,5 +64,4 @@ describe('Check if current location components render correctly', () => {
     expect(screen.getByText('Current conditions')).toBeInTheDocument();
     expect(screen.getByText('Last Updated:')).toBeInTheDocument();
   });
-
 });

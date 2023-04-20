@@ -53,6 +53,7 @@ const CurrentCondtion = () => {
               {conditions && conditions.wind_mph && (
                 <p>{conditions.wind_mph}</p>
               )}
+
               mph
               <GiWindTurbine />
             </li>
