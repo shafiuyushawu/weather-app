@@ -34,7 +34,7 @@
 
 # 📖 Daily Weather Conditions <a name="todo-list"></a>
 
-> **Weather forecast** is a mobile application that givers users overview of weather conditions in your location, it will predict the next 10 days weather forecast in your locality.
+> **Weather forecast** is a mobile application that gives users overview of weather conditions in your location, it will predict the next 10 days weather forecast in your locality.
 
 > It also has search functional where users can seach for weather conditions in their locality by using the country, regions, city names, etc.
 
@@ -101,7 +101,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/shafiuyushawu/weather-app.git && cd Space-Traveler-s-Hub
+  git clone https://github.com/shafiuyushawu/weather-app.git && cd weather-app
 ```
 
 ### Install
@@ -181,7 +181,7 @@ If you like this project, give it s a star :star:
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I want to use this medium to appreciate Nelson Sakwa on Behance who inspired the UI. Also want to extend my appreciation to (Weather API)[https://www.weatherapi.com/docs/] for making the weather API available for me to practice on.
+I want to use this medium to appreciate Nelson Sakwa on Behance who inspired the UI. Also want to extend my appreciation to [Weather API](https://www.weatherapi.com/docs/) for making the weather API available for me to practice on.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
