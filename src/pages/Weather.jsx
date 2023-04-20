@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { GoSearch } from 'react-icons/go';
+import Loading from '../components/Loading';
 import CurrentCondtion from '../components/CurrentCondtion';
 import { fetchWeatherCondtions } from '../redux/weather/weatherSlice';
 import backImg from '../assets/AverageTmpMapRussiaDec.png';
@@ -22,7 +23,7 @@ const Weather = () => {
     if (search) {
       dispatch(fetchWeatherCondtions(search));
     } else {
-      dispatch(fetchWeatherCondtions('Nairobi'));
+      dispatch(fetchWeatherCondtions('Accra'));
     }
   }, [dispatch, search]);
 
@@ -30,11 +31,16 @@ const Weather = () => {
     e.preventDefault();
     if (submit !== 0) {
       setSearch(submit);
+      setSubmit('');
     }
   };
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Loading />
+      </div>
+    );
   }
 
   if (error) {
@@ -51,17 +57,17 @@ const Weather = () => {
             className="w-full h-full object-cover absolute mix-blend-overlay"
           />
         </div>
-        <div className=" justify-between px-3 items-center">
-          <ul className="px-2 align-bottom flex gap-4 justify-center text-[16px]">
-            <li className="text-white font-bold text-right ">
+        <div className=" flex flex-col justify-between px-3 items-center md:flex-row">
+          <ul className="px-2 align-bottom flex gap-4 justify-center text-[18px]">
+            <li className="text-white font-bold text-right md:text-2xl">
               {location && location.region && <p>{location.region}</p>}
             </li>
             |
-            <li className="text-white font-bold  text-right text-[]16px]">
+            <li className="text-white font-bold  text-right text-[18px] md:text-2xl">
               {location && location.country && <p>{location.country}</p>}
             </li>
             |
-            <li className="text-white align-bottom font-bold  text-[16px]">
+            <li className="text-white align-bottom font-bold  text-[18px] md:text-2xl">
               {location && location.continent && <p>{location.continent}</p>}
             </li>
           </ul>
@@ -71,7 +77,7 @@ const Weather = () => {
               placeholder="Search by coutry | city"
               value={submit}
               onChange={(e) => setSubmit(e.target.value)}
-              className="input bg-white  input-sm w-full max-w-xs rounded-r-none"
+              className="input bg-white  input-sm md:input-xl w-full text-[15px] text-black rounded-r-none placeholder:text-[15px] placeholder:text-black"
             />
             <button
               type="submit"

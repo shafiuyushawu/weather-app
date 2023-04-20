@@ -6,7 +6,7 @@ import { AiFillCloud } from 'react-icons/ai';
 const CurrentCondtion = () => {
   const { conditions } = useSelector((state) => state.weather);
   return (
-    <>
+    <div className="">
       <h1 className="text-xl bg-gradient-to-tr from-blue-800 to-green-600 text-white flex justify-center items-center mb-5">
         Current weather
       </h1>
@@ -21,7 +21,7 @@ const CurrentCondtion = () => {
           </span>
         </h2>
         <div className="flex justify-between gap-5">
-          <ul className="">
+          <ul className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-4 mb-5">
             <li className="flex">
               Temperature:
               {' '}
@@ -65,7 +65,7 @@ const CurrentCondtion = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default CurrentCondtion;
