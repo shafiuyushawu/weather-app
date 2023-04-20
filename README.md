@@ -64,7 +64,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Link](https://weather-app-r266.onrender.com/)
+[Go Live 😊](https://weather-app-r266.onrender.com/)
 
 ## Presentation
 
