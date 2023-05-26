@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders DailyForecast component 1`] = `
+<li
+  class="grid-cols-2 border-2 border-blue-300 p-2 hover:border-blue-500 hover:shadow-sm hover:shadow-blue-500 shadow-sm shadow-green-200"
+>
+  <a
+    href="/weather-details"
+  >
+    <div
+      class="flex justify-between"
+    >
+      <span>
+        Date:
+        2023-04-22
+      </span>
+      <svg
+        class="text-2xl text-blue-300 hover:text-blue-500"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 512 512"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M504 256C504 119 393 8 256 8S8 119 8 256s111 248 248 248 248-111 248-248zm-448 0c0-110.5 89.5-200 200-200s200 89.5 200 200-89.5 200-200 200S56 366.5 56 256zm72 20v-40c0-6.6 5.4-12 12-12h116v-67c0-10.7 12.9-16 20.5-8.5l99 99c4.7 4.7 4.7 12.3 0 17l-99 99c-7.6 7.6-20.5 2.2-20.5-8.5v-67H140c-6.6 0-12-5.4-12-12z"
+        />
+      </svg>
+    </div>
+    <div
+      class="flex justify-center"
+    >
+      <hr
+        class="my-1 w-12 h-2  items-center"
+      />
+    </div>
+    <div
+      class="flex justify-between"
+    >
+      <span
+        class="text-white text-start"
+      >
+        Sunny
+      </span>
+      <img
+        alt="daily-icon"
+        class="text-2xl"
+        src="sunny.png"
+      />
+    </div>
+  </a>
+</li>
+`;
